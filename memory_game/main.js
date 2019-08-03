@@ -12,17 +12,14 @@ function checkForMatch() {
 }
 
 function flipCard(cardId) {
-	checkForMatch();
-	
-	if(cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) {
-		alert("You found a match!");
-	} else {
-		alert("Sorry, try again");
-	};
-	
-	console.log(`User flipped ${cards[cardId]}`);
 	cardsInPlay.push(cards[cardId]);
+	console.log(`User flipped ${cards[cardId]}`);
+	if(cardsInPlay.length === 2) { 
+		checkForMatch();
+	}
 }
 
+
+
 flipCard(0);
-flipCard(2);
+flipCard(1);
